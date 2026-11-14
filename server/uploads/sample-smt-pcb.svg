@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+      <rect width="800" height="600" fill="#0d2818"/>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1b4d2e" stroke-width="1"/>
+      </pattern>
+      <rect width="800" height="600" fill="url(#grid)" />
+      <path d="M 50 150 L 250 150 L 320 220 L 480 220" stroke="#00b4d8" stroke-width="4" fill="none"/>
+      <path d="M 50 200 L 220 200 L 290 270 L 480 270" stroke="#00b4d8" stroke-width="4" fill="none"/>
+      <path d="M 50 250 L 200 250 L 270 320 L 480 320" stroke="#00b4d8" stroke-width="4" fill="none"/>
+      <rect x="320" y="240" width="160" height="160" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="3"/>
+      <text x="400" y="325" fill="#f8fafc" font-size="16" font-family="monospace" text-anchor="middle" font-weight="bold">ARM STM32H7</text>
+      <g fill="#94a3b8">
+        <rect x="300" y="260" width="20" height="6"/>
+        <rect x="300" y="280" width="20" height="6"/>
+        <rect x="300" y="300" width="20" height="6"/>
+        <rect x="300" y="320" width="20" height="6"/>
+        <circle cx="310" cy="310" r="14" fill="#ef4444" opacity="0.85"/>
+        <rect x="480" y="260" width="20" height="6"/>
+        <rect x="480" y="280" width="20" height="6"/>
+        <rect x="480" y="300" width="20" height="6"/>
+      </g>
+      <g transform="translate(620, 360) rotate(22)">
+        <rect x="0" y="0" width="50" height="24" fill="#334155" stroke="#ef4444" stroke-width="2"/>
+        <rect x="0" y="0" width="10" height="24" fill="#e2e8f0"/>
+        <rect x="40" y="0" width="10" height="24" fill="#e2e8f0"/>
+      </g>
+      <text x="50" y="560" fill="#4ade80" font-size="16" font-family="monospace">VISIONINSPECT AI - OPTICAL SENSOR CAM_04</text>
+    </svg>

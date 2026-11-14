@@ -1,0 +1,136 @@
+{
+  "users": [
+    {
+      "id": "e2f78f4a-ae82-45a8-a302-eafbe1841048",
+      "email": "admin@visioninspect.ai",
+      "password_hash": "$2a$10$Sntc4k2ytL8oA39XrXqQxOlMki/A22WImhWmINeTvnimusd.kk6oG",
+      "full_name": "Vikramaditya (Lead Quality Architect)",
+      "role": "admin",
+      "created_at": "2026-11-14T09:05:10.202Z",
+      "updated_at": "2026-11-14T09:05:10.202Z"
+    }
+  ],
+  "production_lines": [
+    {
+      "id": "c3f131ce-3d8c-459c-873e-b6923cfa9f85",
+      "name": "SMT Electronics Line 4",
+      "factory_location": "Building A - High Bay 2",
+      "description": "Automated Surface Mount PCB assembly with dual-lane solder reflow",
+      "created_by": "e2f78f4a-ae82-45a8-a302-eafbe1841048",
+      "created_at": "2026-11-14T09:05:10.207Z"
+    },
+    {
+      "id": "187e76dc-410e-4ee3-b180-a450498d904b",
+      "name": "Die-Cast Aluminum Line 1",
+      "factory_location": "Building C - Foundry Wing",
+      "description": "Precision robotic high-pressure die casting and CNC finishing cell",
+      "created_by": "e2f78f4a-ae82-45a8-a302-eafbe1841048",
+      "created_at": "2026-11-14T09:05:10.209Z"
+    },
+    {
+      "id": "a598f707-fe39-46b5-b603-20902d7dfd0e",
+      "name": "Photovoltaic Cell Assembly 2",
+      "factory_location": "Cleanroom Wing 3",
+      "description": "Silicon solar wafer inspection and conductive ribbon tabbing cell",
+      "created_by": "e2f78f4a-ae82-45a8-a302-eafbe1841048",
+      "created_at": "2026-11-14T09:05:10.211Z"
+    }
+  ],
+  "inspections": [
+    {
+      "id": "d7828449-16f4-4962-a7e7-59943f91cd78",
+      "line_id": "c3f131ce-3d8c-459c-873e-b6923cfa9f85",
+      "inspector_id": "e2f78f4a-ae82-45a8-a302-eafbe1841048",
+      "item_sku": "PCB-STM32-REV4",
+      "image_url": "/uploads/sample-smt-pcb.svg",
+      "status": "CRITICAL",
+      "overall_confidence": 97.8,
+      "defect_summary": "Critical short-circuit hazard detected on primary QFP package. Extraneous solder alloy bridge spanning pin 14-15 and angular misalignment on resistor R42.",
+      "ai_raw_response": {
+        "simulated": true
+      },
+      "operator_notes": "Urgent intervention logged by Automated Inline AOI Station",
+      "created_at": "2026-11-14T09:05:10.214Z"
+    },
+    {
+      "id": "6e597eea-07ef-427b-a159-08d8132fa737",
+      "line_id": "187e76dc-410e-4ee3-b180-a450498d904b",
+      "inspector_id": "e2f78f4a-ae82-45a8-a302-eafbe1841048",
+      "item_sku": "ALUM-CAST-HOUSING-B",
+      "image_url": "/uploads/sample-smt-pcb.svg",
+      "status": "WARNING",
+      "overall_confidence": 92.4,
+      "defect_summary": "Cosmetic anodization scratch observed on upper exterior flange. Component passed functional hydrostatic pressure check.",
+      "ai_raw_response": {
+        "simulated": true
+      },
+      "operator_notes": "Rework buffer applied. Part routed to touch-up finishing bay.",
+      "created_at": "2026-11-14T09:05:10.220Z"
+    },
+    {
+      "id": "49a4c13b-bea2-4d86-900c-0999c0e4e7dc",
+      "line_id": "a598f707-fe39-46b5-b603-20902d7dfd0e",
+      "inspector_id": "e2f78f4a-ae82-45a8-a302-eafbe1841048",
+      "item_sku": "PV-WAFER-M10-MONO",
+      "image_url": "/uploads/sample-smt-pcb.svg",
+      "status": "PASSED",
+      "overall_confidence": 99.1,
+      "defect_summary": "Silicon wafer and busbar ribbon alignment perfectly within nominal tolerance. Zero micro-cracks or electroluminescence degradation.",
+      "ai_raw_response": {
+        "simulated": true
+      },
+      "operator_notes": "Automated batch clearance issued.",
+      "created_at": "2026-11-14T09:05:10.225Z"
+    }
+  ],
+  "detected_defects": [
+    {
+      "id": "0284b9d1-2b0c-4141-a6d9-46a6a59c0067",
+      "inspection_id": "d7828449-16f4-4962-a7e7-59943f91cd78",
+      "defect_type": "Solder Bridge Short Circuit",
+      "severity": "CRITICAL",
+      "confidence_score": 98.9,
+      "bounding_box": {
+        "ymin": 480,
+        "xmin": 360,
+        "ymax": 560,
+        "xmax": 420
+      },
+      "description": "Conductive solder meniscus connecting adjacent QFP package lead frames.",
+      "corrective_action": "Halt conveyor line 4 immediately. Purge flux nozzles and recalibrate stencil squeegee angle.",
+      "created_at": "2026-11-14T09:05:10.216Z"
+    },
+    {
+      "id": "c8d59c76-ba8d-4a71-8b82-8199f8142b3b",
+      "inspection_id": "d7828449-16f4-4962-a7e7-59943f91cd78",
+      "defect_type": "Surface-Mount Component Misalignment",
+      "severity": "HIGH",
+      "confidence_score": 94.2,
+      "bounding_box": {
+        "ymin": 580,
+        "xmin": 750,
+        "ymax": 670,
+        "xmax": 870
+      },
+      "description": "SMD Resistor R42 rotated 22 degrees off baseline pad footprint.",
+      "corrective_action": "Recalibrate visual alignment fiducials on High-Speed Feeder Head #3.",
+      "created_at": "2026-11-14T09:05:10.218Z"
+    },
+    {
+      "id": "1bd13c10-0700-4c99-8ebc-c30788ed5bca",
+      "inspection_id": "6e597eea-07ef-427b-a159-08d8132fa737",
+      "defect_type": "Anodized Surface Micro-Scratch",
+      "severity": "LOW",
+      "confidence_score": 91.3,
+      "bounding_box": {
+        "ymin": 220,
+        "xmin": 280,
+        "ymax": 310,
+        "xmax": 580
+      },
+      "description": "Superficial linear scratch along exterior surface.",
+      "corrective_action": "Inspect parts handler conveyor belts for sharp metal burr debris.",
+      "created_at": "2026-11-14T09:05:10.222Z"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "visioninspect-ai",
+  "version": "1.0.0",
+  "description": "VisionInspect AI – Enterprise Automated Visual Quality Control & Defect Detection Platform",
+  "scripts": {
+    "server": "node server/src/server.js",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "db:migrate": "node server/scripts/run-supabase-migration.js"
+  },
+  "keywords": [
+    "computer-vision",
+    "quality-assurance",
+    "manufacturing",
+    "gemini-vision-ai",
+    "defect-detection",
+    "industrial-automation",
+    "supabase"
+  ],
+  "author": "VisionInspect AI Team",
+  "license": "MIT"
+}
