@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { initializeDatabase } from './config/db.js';
 import { seedSampleDataIfEmpty } from './utils/sampleData.js';
@@ -51,7 +52,19 @@ app.use('/api/lines', linesRoutes);
 app.use('/api/inspections', inspectionsRoutes);
 app.use('/api/analytics', analyticsRoutes);
 
-// 404 Handler
+// Serve production frontend assets if client is built
+const clientDistDir = path.join(__dirname, '..', '..', 'client', 'dist');
+if (fs.existsSync(clientDistDir)) {
+  app.use(express.static(clientDistDir));
+  app.get('*', (req, res, next) => {
+    if (req.originalUrl.startsWith('/api') || req.originalUrl.startsWith('/uploads')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDistDir, 'index.html'));
+  });
+}
+
+// 404 Handler for API routes
 app.use((req, res) => {
   res.status(404).json({ error: `Route not found: ${req.method} ${req.originalUrl}` });
 });

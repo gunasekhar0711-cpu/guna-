@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "VisionInspect AI – Enterprise Automated Visual Quality Control & Defect Detection Platform",
   "scripts": {
+    "start": "node server/src/server.js",
     "server": "node server/src/server.js",
     "client": "npm --prefix client run dev",
-    "build": "npm --prefix client run build",
+    "build": "npm --prefix client install && npm --prefix client run build",
     "db:migrate": "node server/scripts/run-supabase-migration.js"
   },
   "keywords": [
